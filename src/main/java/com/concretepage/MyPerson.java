@@ -1,6 +1,6 @@
 package com.concretepage;
 
-public class Person {
+public class MyPerson {
 	private int id;
 	private String location;
 	private String name;

@@ -2,13 +2,13 @@ package com.concretepage.component;
 
 import org.springframework.stereotype.Component;
 
-import com.concretepage.Person;
+import com.concretepage.MyPerson;
 
 @Component
 public class PersonService implements IPersonService {
 	@Override
-	public Person getPersonDetail(Integer id){
-		Person p = new Person();
+	public MyPerson getPersonDetail(Integer id){
+		MyPerson p = new MyPerson();
 		p.setId(id);
 		p.setLocation("Varanasi");
 		p.setName("Ram");

@@ -9,14 +9,14 @@ import com.concretepage.component.IPersonService;
 
 @RestController
 @RequestMapping("/data")
-public class PersonController {
+public class MyPersonController {
 	@Autowired
 	private IPersonService personService;
 	
 	@RequestMapping("/person")
-	public Person getPersonDetail(@RequestParam(value = "id",required = false,
+	public MyPerson getPersonDetail(@RequestParam(value = "id",required = false,
 	                                                    defaultValue = "0") Integer id) {
-		Person p = personService.getPersonDetail(id);
+		MyPerson p = personService.getPersonDetail(id);
 		return p;
 	}
 }
