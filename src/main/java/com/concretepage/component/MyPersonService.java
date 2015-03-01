@@ -1,11 +1,10 @@
 package com.concretepage.component;
 
+import com.concretepage.MyPerson;
 import org.springframework.stereotype.Component;
 
-import com.concretepage.MyPerson;
-
 @Component
-public class PersonService implements IPersonService {
+public class MyPersonService implements IMyPersonService {
 	@Override
 	public MyPerson getPersonDetail(Integer id){
 		MyPerson p = new MyPerson();

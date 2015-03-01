@@ -53,12 +53,18 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>RestSample</groupId>-->
+            <!--<artifactId>RestSample</artifactId>-->
+            <!--<version>1.0</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/src/lib/model.jar</systemPath>-->
+        <!--</dependency>-->
+        <!--Persist Dependency-->
         <dependency>
-            <groupId>RestSample</groupId>
-            <artifactId>RestSample</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/lib/model.jar</systemPath>
+            <groupId>model</groupId>
+            <artifactId>model</artifactId>
+            <version>2.0</version>
         </dependency>
     </dependencies>
     		 

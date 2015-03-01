@@ -2,6 +2,6 @@ package com.concretepage.component;
 
 import com.concretepage.MyPerson;
 
-public interface IPersonService {
+public interface IMyPersonService {
   public MyPerson getPersonDetail(Integer id);
 }
