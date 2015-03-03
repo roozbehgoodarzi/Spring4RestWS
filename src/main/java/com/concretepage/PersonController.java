@@ -31,12 +31,7 @@ public class PersonController {
         personServiceRunner.savePerson(person);
 
     }
-//
-//    @RequestMapping("/savePersonObject")
-//    public Person savePersonObject( @RequestParam(value = "person", required = true) Person person){
-//        personServiceRunner.savePerson(person);
-//        return person;
-//    }
+
 
     @RequestMapping("/savePersonObject")
     public void savePersonObject(@RequestBody Person person){
