@@ -43,6 +43,17 @@ public class HibernateConfiguration {
         return dataSource;
     }
 
+//    @Bean
+//    @Primary
+//    @Resource(name = JNDI_NAME)
+//    public DataSource dataSource() {
+//
+//        JndiDataSourceLookup jndiDataSourceLookup = new JndiDataSourceLookup();
+//        jndiDataSourceLookup.setResourceRef(true);
+//        return jndiDataSourceLookup.getDataSource(JNDI_NAME);
+//
+//    }
+
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));

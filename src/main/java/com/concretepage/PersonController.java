@@ -52,6 +52,4 @@ public class PersonController {
     public Person getPersonByAccountId(@RequestParam(value = "accountId", required = true) String accountId){
         return personServiceRunner.getPersonByAccountId(accountId);
     }
-
-
 }
