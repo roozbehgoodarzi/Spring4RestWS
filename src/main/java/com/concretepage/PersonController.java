@@ -2,6 +2,7 @@ package com.concretepage;
 
 import com.ocs.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +17,11 @@ public class PersonController {
     PersonServiceRunner personServiceRunner;
 
     @RequestMapping("/savePerson")
-    public void SavePerson(
-                           @RequestParam(value = "personId", required = true) String personId,
-                           @RequestParam(value = "personName", required = false) String personName,
-                           @RequestParam(value = "personLastName", required = false) String personLastName,
-                           @RequestParam(value = "personNationalId", required = true) String personNationalId
+    public void savePerson(
+            @RequestParam(value = "personId", required = true) String personId,
+            @RequestParam(value = "personName", required = false) String personName,
+            @RequestParam(value = "personLastName", required = false) String personLastName,
+            @RequestParam(value = "personNationalId", required = true) String personNationalId
     ){
         Person person = new Person();
         person.setPersonId(personId);
@@ -28,7 +29,17 @@ public class PersonController {
         person.setFirstName(personName);
         person.setLastName(personLastName);
         personServiceRunner.savePerson(person);
-        System.out.println("hey hey");
 
+    }
+//
+//    @RequestMapping("/savePersonObject")
+//    public Person savePersonObject( @RequestParam(value = "person", required = true) Person person){
+//        personServiceRunner.savePerson(person);
+//        return person;
+//    }
+
+    @RequestMapping("/savePersonObject")
+    public void savePersonObject(@RequestBody Person person){
+        personServiceRunner.savePerson(person);
     }
 }
