@@ -16,4 +16,17 @@ public class PersonServiceRunner {
         personService.addPerson(person);
         System.out.println("person inserted ..");
     }
+
+    public Person getPersonByUnitEmployCode(String unitEmployCode){
+        Person person = personService.getPersonByEmployeeId(unitEmployCode);
+        return person;
+    }
+    public Person getPersonByNationalId(String nationalId){
+        Person person = personService.getPersonByEmployeeId(nationalId);
+        return person;
+    }
+    public Person getPersonByAccountId(String accountId){
+        Person person = personService.getPersonByEmployeeId(accountId);
+        return person;
+    }
 }

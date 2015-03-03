@@ -18,4 +18,12 @@ public class TestRestClient extends TestCase {
         System.out.println("********");
 
     }
+
+    public void testPersonFetchByEmployeeId(){
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8080/service/getPersonByUnitEmployCode";
+        Person person = restTemplate.getForObject(url, Person.class, "132");
+        System.out.println("person.getFirstName() = " + person.getFirstName());
+
+    }
 }

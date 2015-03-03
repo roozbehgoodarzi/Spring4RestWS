@@ -37,4 +37,21 @@ public class PersonController {
     public void savePersonObject(@RequestBody Person person){
         personServiceRunner.savePerson(person);
     }
+
+    @RequestMapping("/getPersonByUnitEmployCode")
+    public Person getPersonByUnitEmployCode(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode){
+        return personServiceRunner.getPersonByUnitEmployCode(unitEmployCode);
+    }
+
+    @RequestMapping("/getPersonByNationalId")
+    public Person getPersonByNationalId(@RequestParam(value = "nationalId", required = true) String nationalId){
+        return personServiceRunner.getPersonByNationalId(nationalId);
+    }
+
+    @RequestMapping("/getPersonByAccountId")
+    public Person getPersonByAccountId(@RequestParam(value = "accountId", required = true) String accountId){
+        return personServiceRunner.getPersonByAccountId(accountId);
+    }
+
+
 }
