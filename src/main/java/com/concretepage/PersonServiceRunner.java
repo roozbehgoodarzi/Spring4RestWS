@@ -29,4 +29,19 @@ public class PersonServiceRunner {
         Person person = personService.getPersonByEmployeeId(accountId);
         return person;
     }
+
+    public Person getPersonByParameter(String parameterType, String parameterValue) {
+        switch(Integer.parseInt(parameterType)){
+            case 1:
+                return this.getPersonByUnitEmployCode(parameterValue);
+            case 2:
+                return this.getPersonByNationalId(parameterValue);
+            case 3:
+                return this.getPersonByAccountId(parameterType);
+            default:
+                System.out.println("invalid parameter");
+        }
+
+        return null;
+    }
 }

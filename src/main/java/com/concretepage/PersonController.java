@@ -22,7 +22,7 @@ public class PersonController {
             @RequestParam(value = "personName", required = false) String personName,
             @RequestParam(value = "personLastName", required = false) String personLastName,
             @RequestParam(value = "personNationalId", required = true) String personNationalId
-    ){
+    ) {
         Person person = new Person();
         person.setPersonId(personId);
         person.setNationalId(personNationalId);
@@ -34,22 +34,29 @@ public class PersonController {
 
 
     @RequestMapping("/savePersonObject")
-    public void savePersonObject(@RequestBody Person person){
+    public void savePersonObject(@RequestBody Person person) {
         personServiceRunner.savePerson(person);
     }
 
     @RequestMapping("/getPersonByUnitEmployCode")
-    public Person getPersonByUnitEmployCode(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode){
+    public Person getPersonByUnitEmployCode(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode) {
         return personServiceRunner.getPersonByUnitEmployCode(unitEmployCode);
     }
 
     @RequestMapping("/getPersonByNationalId")
-    public Person getPersonByNationalId(@RequestParam(value = "nationalId", required = true) String nationalId){
+    public Person getPersonByNationalId(@RequestParam(value = "nationalId", required = true) String nationalId) {
         return personServiceRunner.getPersonByNationalId(nationalId);
     }
 
     @RequestMapping("/getPersonByAccountId")
-    public Person getPersonByAccountId(@RequestParam(value = "accountId", required = true) String accountId){
+    public Person getPersonByAccountId(@RequestParam(value = "accountId", required = true) String accountId) {
         return personServiceRunner.getPersonByAccountId(accountId);
+    }
+
+    @RequestMapping("/getPersonByParameter")
+    public Person getPersonByParameter(
+            @RequestParam(value = "parameterType", required = true) String parameterType,
+            @RequestParam(value = "parameterValue", required = true) String parameterValue){
+        return personServiceRunner.getPersonByParameter(parameterType, parameterValue );
     }
 }

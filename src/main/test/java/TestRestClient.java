@@ -10,8 +10,8 @@ public class TestRestClient extends TestCase {
     public void testCreatePerson(){
         RestTemplate restTemplate = new RestTemplate();
         Person person = new Person();
-        person.setPersonId("22222");
-        person.setNationalId("54545454");
+        person.setPersonId("65454545");
+        person.setNationalId("8796464");
         person.setFirstName("Hamed");
         person.setLastName("Mirzaei");
         restTemplate.postForLocation(SERVER_URI,person);
