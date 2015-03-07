@@ -2,10 +2,7 @@ package com.concretepage;
 
 import com.ocs.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Goodarzi on 02/28/2015.
@@ -16,7 +13,9 @@ public class PersonController {
     @Autowired
     PersonServiceRunner personServiceRunner;
 
-    @RequestMapping("/savePerson")
+
+    //    @RequestMapping("/persons/savePerson")
+    @RequestMapping(value = "/persons/savePerson", method = RequestMethod.POST)
     public void savePerson(
             @RequestParam(value = "personId", required = true) String personId,
             @RequestParam(value = "personName", required = false) String personName,
@@ -33,30 +32,54 @@ public class PersonController {
     }
 
 
-    @RequestMapping("/savePersonObject")
-    public void savePersonObject(@RequestBody Person person) {
+//    //    @RequestMapping("/persons/savePersonObject")
+//    @RequestMapping(value = "/persons/savePersonObject", method = RequestMethod.GET)
+//    public void savePersonObject(@RequestBody Person person) {
+//        personServiceRunner.savePerson(person);
+//    }
+
+    @RequestMapping(value = "/persons", method = RequestMethod.POST, headers="Accept=application/json")
+         public void savePersonObject(@RequestBody Person person) {
+        System.out.println("hey hey hey");
         personServiceRunner.savePerson(person);
     }
 
-    @RequestMapping("/getPersonByUnitEmployCode")
+    //    @RequestMapping("/persons/getPersonByUnitEmployCode")
+    @RequestMapping("/persons/getPersonByUnitEmployCode")
     public Person getPersonByUnitEmployCode(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode) {
         return personServiceRunner.getPersonByUnitEmployCode(unitEmployCode);
     }
 
-    @RequestMapping("/getPersonByNationalId")
+    //    @RequestMapping("/persons/getPersonByNationalId")
+    @RequestMapping("/persons/getPersonByNationalId")
     public Person getPersonByNationalId(@RequestParam(value = "nationalId", required = true) String nationalId) {
         return personServiceRunner.getPersonByNationalId(nationalId);
     }
 
-    @RequestMapping("/getPersonByAccountId")
+    //    @RequestMapping("/persons/getPersonByAccountId")
+    @RequestMapping("/persons/getPersonByAccountId")
     public Person getPersonByAccountId(@RequestParam(value = "accountId", required = true) String accountId) {
         return personServiceRunner.getPersonByAccountId(accountId);
     }
 
-    @RequestMapping("/getPersonByParameter")
+//    //    @RequestMapping("/persons/getPersonByParameter")
+//    @RequestMapping(value = "/persons/getPersonByParameter", method = RequestMethod.POST)
+//    public Person getPersonByParameter(
+//            @RequestParam(value = "param1", required = true) String parameterType,
+//            @RequestParam(value = "param2", required = true) String parameterValue) {
+//        return personServiceRunner.getPersonByParameter(parameterType, parameterValue);
+//    }
+
+    @RequestMapping(value = "/persons/{param1}/{param2}", method = RequestMethod.GET)
     public Person getPersonByParameter(
-            @RequestParam(value = "parameterType", required = true) String parameterType,
-            @RequestParam(value = "parameterValue", required = true) String parameterValue){
-        return personServiceRunner.getPersonByParameter(parameterType, parameterValue );
+            @PathVariable("param1") String param1,
+            @PathVariable("param2") String param2) {
+        return personServiceRunner.getPersonByParameter(param1, param2);
     }
+
+//    @RequestMapping(value = "/persons/getPersonByParameter/param1/{param1}/param2/{param2}", method = RequestMethod.GET)
+//    public Person getPersonByParameterGetService(@PathVariable("param1") String param1, @PathVariable("param2") String param2) {
+//        return personServiceRunner.getPersonByParameter(param1, param2);
+//    }
+
 }
