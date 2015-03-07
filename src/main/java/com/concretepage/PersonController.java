@@ -41,7 +41,8 @@ public class PersonController {
     @RequestMapping(value = "/persons", method = RequestMethod.POST, headers="Accept=application/json")
          public void savePersonObject(@RequestBody Person person) {
         System.out.println("hey hey hey");
-        personServiceRunner.savePerson(person);
+//        personServiceRunner.savePerson(person);
+        personServiceRunner.saveOrUpdate(person);
     }
 
     //    @RequestMapping("/persons/getPersonByUnitEmployCode")

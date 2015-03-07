@@ -30,6 +30,11 @@ public class PersonServiceRunner {
         return person;
     }
 
+    public void saveOrUpdate(Person person){
+        personService.saveOrUpdatePerson(person);
+        System.out.println("person saved or updated..");
+    }
+
     public Person getPersonByParameter(String parameterType, String parameterValue) {
         switch(Integer.parseInt(parameterType)){
             case 1:
