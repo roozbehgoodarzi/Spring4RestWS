@@ -18,15 +18,15 @@ public class PersonServiceRunner {
     }
 
     public Person getPersonByUnitEmployCode(String unitEmployCode){
-        Person person = personService.getPersonByEmployeeId(unitEmployCode);
+        Person person = personService.getPersonByPersonId(unitEmployCode);
         return person;
     }
     public Person getPersonByNationalId(String nationalId){
-        Person person = personService.getPersonByEmployeeId(nationalId);
+        Person person = personService.getPersonByPersonId(nationalId);
         return person;
     }
     public Person getPersonByAccountId(String accountId){
-        Person person = personService.getPersonByEmployeeId(accountId);
+        Person person = personService.getPersonByPersonId(accountId);
         return person;
     }
 
