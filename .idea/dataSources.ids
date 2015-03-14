@@ -1407,29 +1407,37 @@
       <index name="idx_unique_manager" unique="true" columns="manager_staff_id"/>
       <index name="idx_fk_address_id" unique="false" columns="address_id"/>
     </table>
-    <table name="action_type" schema="" catalog="smpl" type="TABLE">
-      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="actionType" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="status" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <exported-key name="FK_hgm1c97mc4nm5dnvp4ympjdnn" table="ticket_action" schema="" catalog="smpl" columns="ACTION_TYPE_ID"/>
-    </table>
-    <table name="category_type" schema="" catalog="smpl" type="TABLE">
-      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="actionType" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="status" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <exported-key name="FK_3534xntyyshlrv7jpi4rlal71" table="ticket" schema="" catalog="smpl" columns="CATEGORY_TYPE_ID"/>
-    </table>
     <table name="customer" schema="" catalog="smpl" type="TABLE">
-      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="SURNAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="birthDate" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="birthPlace" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="bourseCode" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="createDate" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="createPlace" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="createPlaceCode" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="education" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fatherName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="faxNumber1" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="faxNumber2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="firstName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="growDate" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="homeAddress" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="homePhone" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="homePostalCode" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="identityCardNumber" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="identityCardSeri" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="identityCardSerial" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="job" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mobilePhone1" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mobilePhone2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nationalId" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="personId" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="workAddress" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="workPhone" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="workPostalCode" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="ID"/>
-      <index name="UK_7frquui4x1cwkuwo393uajkbo" unique="true" columns="SURNAME"/>
-      <index name="UK_r695se17gwx5ub1o0366o5eb3" unique="true" columns="NAME"/>
     </table>
     <table name="person" schema="" catalog="smpl" type="TABLE">
       <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
@@ -1452,35 +1460,6 @@
       <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="ID"/>
-    </table>
-    <table name="ticket" schema="" catalog="smpl" type="TABLE">
-      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="createDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="CATEGORY_TYPE_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <foreign-key name="FK_3534xntyyshlrv7jpi4rlal71" columns="CATEGORY_TYPE_ID" ref-table="category_type" ref-schema="" ref-catalog="smpl" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="FK_5r328fe3d1guv7cf0yst9isig" table="ticket_action" schema="" catalog="smpl" columns="TICKET_ID"/>
-      <exported-key name="FK_m9t8u0gpes8tflkj8xxyriqe6" table="ticket_relationship" schema="" catalog="smpl" columns="Original_Ticket_Id"/>
-      <index name="FK_3534xntyyshlrv7jpi4rlal71" unique="false" columns="CATEGORY_TYPE_ID"/>
-    </table>
-    <table name="ticket_action" schema="" catalog="smpl" type="TABLE">
-      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="createDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="ACTION_TYPE_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="TICKET_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <foreign-key name="FK_5r328fe3d1guv7cf0yst9isig" columns="TICKET_ID" ref-table="ticket" ref-schema="" ref-catalog="smpl" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="FK_hgm1c97mc4nm5dnvp4ympjdnn" columns="ACTION_TYPE_ID" ref-table="action_type" ref-schema="" ref-catalog="smpl" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="FK_5r328fe3d1guv7cf0yst9isig" unique="false" columns="TICKET_ID"/>
-      <index name="FK_hgm1c97mc4nm5dnvp4ympjdnn" unique="false" columns="ACTION_TYPE_ID"/>
-    </table>
-    <table name="ticket_relationship" schema="" catalog="smpl" type="TABLE">
-      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="createDate" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="Original_Ticket_Id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <foreign-key name="FK_m9t8u0gpes8tflkj8xxyriqe6" columns="Original_Ticket_Id" ref-table="ticket" ref-schema="" ref-catalog="smpl" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="FK_m9t8u0gpes8tflkj8xxyriqe6" unique="false" columns="Original_Ticket_Id"/>
     </table>
     <table name="entityobject" schema="" catalog="test" type="TABLE">
       <column name="DTYPE" sqlType="VARCHAR" precision="31" scale="0" nullable="false" jdbcType="12"/>

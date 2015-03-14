@@ -45,23 +45,23 @@ public class PersonController {
         personServiceRunner.saveOrUpdate(person);
     }
 
-    //    @RequestMapping("/persons/getPersonByUnitEmployCode")
-    @RequestMapping("/persons/getPersonByUnitEmployCode")
-    public Person getPersonByUnitEmployCode(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode) {
-        return personServiceRunner.getPersonByUnitEmployCode(unitEmployCode);
-    }
-
-    //    @RequestMapping("/persons/getPersonByNationalId")
-    @RequestMapping("/persons/getPersonByNationalId")
-    public Person getPersonByNationalId(@RequestParam(value = "nationalId", required = true) String nationalId) {
-        return personServiceRunner.getPersonByNationalId(nationalId);
-    }
-
-    //    @RequestMapping("/persons/getPersonByAccountId")
-    @RequestMapping("/persons/getPersonByAccountId")
-    public Person getPersonByAccountId(@RequestParam(value = "accountId", required = true) String accountId) {
-        return personServiceRunner.getPersonByAccountId(accountId);
-    }
+//    //    @RequestMapping("/persons/getPersonByUnitEmployCode")
+//    @RequestMapping("/persons/getPersonByUnitEmployCode")
+//    public Person getPersonByUnitEmployCode(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode) {
+//        return personServiceRunner.getPersonByUnitEmployCode(unitEmployCode);
+//    }
+//
+//    //    @RequestMapping("/persons/getPersonByNationalId")
+//    @RequestMapping("/persons/getPersonByNationalId")
+//    public Person getPersonByNationalId(@RequestParam(value = "nationalId", required = true) String nationalId) {
+//        return personServiceRunner.getPersonByNationalId(nationalId);
+//    }
+//
+//    //    @RequestMapping("/persons/getPersonByAccountId")
+//    @RequestMapping("/persons/getPersonByAccountId")
+//    public Person getPersonByAccountId(@RequestParam(value = "accountId", required = true) String accountId) {
+//        return personServiceRunner.getPersonByAccountId(accountId);
+//    }
 
 //    //    @RequestMapping("/persons/getPersonByParameter")
 //    @RequestMapping(value = "/persons/getPersonByParameter", method = RequestMethod.POST)
