@@ -17,16 +17,16 @@ public class PersonServiceRunner {
         System.out.println("person inserted ..");
     }
 
-    public Person getPersonByUnitEmployCode(String unitEmployCode){
+    public Person getPersonByPersonID(String unitEmployCode){
         Person person = personService.getPersonByPersonId(unitEmployCode);
         return person;
     }
     public Person getPersonByNationalId(String nationalId){
-        Person person = personService.getPersonByPersonId(nationalId);
+        Person person = personService.getPersonByNationalID(nationalId);
         return person;
     }
     public Person getPersonByAccountId(String accountId){
-        Person person = personService.getPersonByPersonId(accountId);
+        Person person = personService.getPersonByAccountID(accountId);
         return person;
     }
 
@@ -38,11 +38,11 @@ public class PersonServiceRunner {
     public Person getPersonByParameter(String parameterType, String parameterValue) {
         switch(Integer.parseInt(parameterType)){
             case 1:
-                return this.getPersonByUnitEmployCode(parameterValue);
+                return this.getPersonByPersonID(parameterValue);
             case 2:
                 return this.getPersonByNationalId(parameterValue);
             case 3:
-                return this.getPersonByAccountId(parameterType);
+                return this.getPersonByAccountId(parameterValue);
             default:
                 System.out.println("invalid parameter");
         }
