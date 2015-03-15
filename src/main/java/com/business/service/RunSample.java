@@ -1,4 +1,4 @@
-package com.concretepage;
+package com.business.service;
 
 import com.ocs.entity.SampleEntity;
 import com.ocs.spring.service.SampleEntityService;

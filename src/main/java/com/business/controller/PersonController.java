@@ -1,5 +1,6 @@
-package com.concretepage;
+package com.business.controller;
 
+import com.business.service.PersonServiceRunner;
 import com.ocs.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Goodarzi on 02/28/2015.
  */
 @RestController
-@RequestMapping("/service")
+@RequestMapping //("/service")
 public class PersonController {
     @Autowired
     PersonServiceRunner personServiceRunner;
@@ -45,10 +46,10 @@ public class PersonController {
         personServiceRunner.saveOrUpdate(person);
     }
 
-//    //    @RequestMapping("/persons/getPersonByUnitEmployCode")
-//    @RequestMapping("/persons/getPersonByUnitEmployCode")
-//    public Person getPersonByUnitEmployCode(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode) {
-//        return personServiceRunner.getPersonByUnitEmployCode(unitEmployCode);
+//    //    @RequestMapping("/persons/getPersonByPersonID")
+//    @RequestMapping("/persons/getPersonByPersonID")
+//    public Person getPersonByPersonID(@RequestParam(value = "unitEmployCode", required = true) String unitEmployCode) {
+//        return personServiceRunner.getPersonByPersonID(unitEmployCode);
 //    }
 //
 //    //    @RequestMapping("/persons/getPersonByNationalId")

@@ -1,4 +1,4 @@
-package com.concretepage.config;
+package com.business.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration 
-@ComponentScan("com.concretepage") 
+@ComponentScan("com.business")
 @EnableWebMvc
 @Import(HibernateConfiguration.class)
 public class AppConfig {

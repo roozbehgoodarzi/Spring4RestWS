@@ -1,4 +1,4 @@
-package com.concretepage.config;
+package com.business.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "com.concretepage.config","com.ocs.spring.service","com.ocs.spring.dao.hibernateImpl","com.ocs.entity" })
+@ComponentScan({"com.business.config","com.ocs.spring.service","com.ocs.spring.dao.hibernateImpl","com.ocs.entity" })
 @PropertySources(value = {@PropertySource( "classpath:application.properties" )})
 public class HibernateConfiguration {
 

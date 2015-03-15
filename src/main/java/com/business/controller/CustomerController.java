@@ -1,5 +1,6 @@
-package com.concretepage;
+package com.business.controller;
 
+import com.business.service.CustomerServiceRunner;
 import com.ocs.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by Ocs1 on 3/11/2015.
  */
 @RestController
-@RequestMapping("/service")
+@RequestMapping//("/service")
 public class CustomerController {
     @Autowired
     CustomerServiceRunner customerServiceRunner;

@@ -21,7 +21,7 @@ public class TestRestClient extends TestCase {
 
     public void testPersonFetchByEmployeeId(){
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/service/getPersonByUnitEmployCode";
+        String url = "http://localhost:8080/service/getPersonByPersonID";
         Person person = restTemplate.getForObject(url, Person.class, "132");
         System.out.println("person.getFirstName() = " + person.getFirstName());
 

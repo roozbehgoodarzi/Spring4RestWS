@@ -1,5 +1,6 @@
-package com.concretepage;
+package com.business.controller;
 
+import com.business.service.RunSample;
 import com.ocs.entity.SampleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
